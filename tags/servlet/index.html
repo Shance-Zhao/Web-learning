@@ -14,13 +14,10 @@
 <meta name="author" content="Shance Zhao" />
 
 
-    
-    
-
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shance Blog">
-<meta property="og:url" content="https://shancezhao.github.io/index.html">
+<meta property="og:url" content="https://shancezhao.github.io/tags/servlet/index.html">
 <meta property="og:site_name" content="Shance Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shance Blog">
@@ -51,13 +48,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Shance Blog</title>
+<title>Tag: servlet | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,10 +61,10 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
+        isHome: false,
         isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -263,216 +258,58 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Web-Tools-1" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/01/30/Web-Tools-1/" class="article-date">
-      <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">2017-01-30</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/01/30/Web-Tools-1/" class="archive-article-date">
+      <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">01-30</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/30/Web-Tools-1/">Web Tools(2)How to develop a servlet web application by netbeans</a>
+      <a class="archive-article-title" href="/2017/01/30/Web-Tools-1/">Web Tools(2)How to develop a servlet web application by netbeans</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.<br><img src="https://c1.staticflickr.com/1/524/32567064101_899bd45b11_b.jpg" alt=""><br>2.Give the project a name, mine is Test1. Then Next directly.<br><img src="https://c1.staticflickr.com/1/566/31876975373_fdf79298c9_b.jpg" alt=""><br>3.The Server choose “Apache Tomcat 8.0”. Then Next.</p>
-<p>4.You should set your tomcat information.<br><img src="https://c1.staticflickr.com/1/599/31876979453_3145bd228f_b.jpg" alt=""><br>Like that.<br><img src="https://c1.staticflickr.com/1/389/31876979483_9ab8536123_b.jpg" alt=""><br>If your address is not right, it will show the words in red.<br><img src="http://c1.staticflickr.com/1/370/31876979573_8649b00fb4_n.jpg" alt=""></p>
-<p>5.Finish.</p>
-<p>6.You can see a file on the Projects tab, and right click it, choose New - Servlet.<br><img src="https://c1.staticflickr.com/1/502/32567065311_114149110a_b.jpg" alt=""><br>Enter the Class Name, mine is named Quiz, and you’d better enter a Package Name.<br><img src="https://c1.staticflickr.com/1/392/32648557336_a00e29fe1e_b.jpg" alt=""><br>7.Next. First, you should choose the checkbox “Add information to deployment descriptor(web.xml)”, so that the netbeans will help you create the web.xml, and you don’t need to write it by yourself.</p>
-<p>And you can change the Servlet Name or URL Pattern here, but I prefer not, so I won’t introduce that here.<br><img src="https://c1.staticflickr.com/1/480/32567066371_9916d86baf_b.jpg" alt=""><br>Finish.</p>
-<p>8.Now you can see the Quiz.java, that’s the servlet file. You also can change your url-pattern in the web.xml, and that’s the name you enter in the browser, so, remember it, don’t mix it.<br><img src="https://c1.staticflickr.com/1/375/32648559806_6cec13ea8e_h.jpg" alt=""><br>9.Run the project.</p>
-<p><strong>Or</strong> </p>
-<p>You can first open the <strong>Service</strong> near the Projects &amp; Files. Open the <strong>Servers</strong> here, <img src="https://c1.staticflickr.com/1/266/31876979313_5827ed1358_z.jpg" alt="">and right click the Apache Tomcat 8.0, click the Start.<br><img src="https://c1.staticflickr.com/1/758/32648559856_311c22b73d_b.jpg" alt=""><br>Then, you can see this page.<br><img src="https://c1.staticflickr.com/1/301/31876979373_52dd397ec3_b.jpg" alt=""><br>10.Text your url-pattern next in the browser, like that:<br><a href="http://localhost:8084/Test1/Quiz" target="_blank" rel="external">http://localhost:8084/Test1/Quiz</a><br><img src="https://c1.staticflickr.com/1/274/31876979413_863362b2e0_k.jpg" alt=""></p>
-<p><strong>Your port maybe not be 8084, that’s okay, but if you can’t open the first page or that page, please change your port in your tomcat’s setting.</strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/web/">web</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/netbeans/">netbeans</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/01/30/hello-world/" class="article-date">
-      <time datetime="2017-01-30T18:01:38.893Z" itemprop="datePublished">2017-01-30</time>
-</a>
-
-
-    </div>
+    </div></section>
   
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/30/hello-world/">Hello World</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-The-Differences-between-js-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/15/The-Differences-between-js-jQuery/" class="article-date">
-      <time datetime="2016-11-16T01:45:55.000Z" itemprop="datePublished">2016-11-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/The-Differences-between-js-jQuery/">Web Tools(1) The Differences between js &amp; jQuery</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>JQuery is a lightweight Javascript library or framework. Javascript is a programming language, while jQuery is a library. By using jQuery, we can use less code finishing more functions. But jQuery is slower than Javascript, especially some people like using abuse of selectors and do not use chainable functions to write.</p>
-<h2 id="1-Positioning-element"><a href="#1-Positioning-element" class="headerlink" title="1. Positioning element"></a>1. Positioning element</h2><p> <strong>JS</strong></p>
-<p>document.getElementById(“abc”)</p>
-<p> <strong>JQuery</strong></p>
-<p>$(“#abc”)    : This is positioning by id<br>$(“.abc”)    : This is positioning by class<br>$(“div”)    : This is position by tag</p>
-<p> To pay attention that JS retruns this element, and jQuery returns a JS object, and all examples below assume that have alreay positioned the element abc.</p>
-<h2 id="2-Change-the-content-of-elements"><a href="#2-Change-the-content-of-elements" class="headerlink" title="2. Change the content of elements"></a>2. Change the content of elements</h2><p> JS<br> abc.innerHTML = “test”;<br> JQuery<br> abc.html(“test”);</p>
-<h2 id="3-Assign-values"><a href="#3-Assign-values" class="headerlink" title="3. Assign values"></a>3. Assign values</h2><p> JS<br> abc.value = “valueabc”;<br> JQuery<br> abc.val(“valueabc”);</p>
-<h2 id="4-modify-styles-of-elements"><a href="#4-modify-styles-of-elements" class="headerlink" title="4. modify styles of elements"></a>4. modify styles of elements</h2><p> JS<br> abc.style.fontSize=size;<br> JQuery<br> abc.css(‘font-size’,18);</p>
-<p> JS<br> abc.className = “aaa”;<br> JQuery<br> abc.removeClass();<br> abc.addClass(“aaa”);</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
     <div class="outer">
