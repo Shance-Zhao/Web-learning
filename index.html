@@ -184,7 +184,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-jQuery/">javascript, jQuery</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-jQuery/">javascript, jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-netbeans-servlet/">web, netbeans, servlet</a></li></ul>
                     </div>
                 </section>
                 
@@ -262,6 +262,77 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Web-Tools-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/30/Web-Tools-1/" class="article-date">
+      <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">2017-01-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/Web-Tools-1/">Web Tools(1)How to develop a servlet web application by netbeans</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-1.png" alt=""><br>2.Give the project a name, mine is Test1. Then Next directly.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-2.png" alt=""><br>3.The Server choose “Apache Tomcat 8.0”. Then Next.</p>
+<p>4.You should set your tomcat information.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-11.png" alt=""><br>Like that.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-12.png" alt=""><br>If your address is not right, it will show the words in red.<br> <img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-13.png" alt=""><br>5.Finish.</p>
+<p>6.You can see a file on the Projects tab, and right click it, choose New - Servlet.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-3.png" alt=""><br>Enter the Class Name, mine is named Quiz, and you’d better enter a Package Name.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-4.png" alt=""><br>7.Next. First, you should choose the checkbox “Add information to deployment descriptor(web.xml)”, so that the netbeans will help you create the web.xml, and you don’t need to write it by yourself.</p>
+<p>And you can change the Servlet Name or URL Pattern here, but I prefer not, so I won’t introduce that here.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-5.png" alt=""><br>Finish.</p>
+<p>8.Now you can see the Quiz.java, that’s the servlet file. You also can change your url-pattern in the web.xml, and that’s the name you enter in the browser, so, remember it, don’t mix it.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-6.png" alt=""><br>9.Run the project.</p>
+<p><strong>Or</strong> </p>
+<p>You can first open the <strong>Service</strong> near the Projects &amp; Files. Open the <strong>Servers</strong> here, <img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-7.png" alt="">and right click the Apache Tomcat 8.0, click the Start.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-8.png" alt=""><br>Then, you can see this page.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-9.png" alt=""><br>10.Text your url-pattern next in the browser, like that:<br><a href="http://localhost:8084/Test1/Quiz" target="_blank" rel="external">http://localhost:8084/Test1/Quiz</a><br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-10.png" alt=""></p>
+<p><strong>Your port maybe not be 8084, that’s okay, but if you can’t open the first page or that page, please change your port in your tomcat’s setting.</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-netbeans-servlet/">web, netbeans, servlet</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -373,6 +444,10 @@
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
 
       
     <div class="article-tag tagcloud">
