@@ -15,30 +15,13 @@
 
 
 
-<meta name="description" content="1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.2.Give the project a name, mine is Test1. Then Next directly.3.The Server choose “Apache Tomcat 8.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Web Tools(1)How to develop a servlet web application by netbeans">
-<meta property="og:url" content="http://yoursite.com/2017/01/30/Web-Tools-1/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="Shance Blog">
-<meta property="og:description" content="1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.2.Give the project a name, mine is Test1. Then Next directly.3.The Server choose “Apache Tomcat 8.">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-1.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-2.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-11.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-12.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-13.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-3.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-4.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-5.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-6.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-7.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-8.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-9.png">
-<meta property="og:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-10.png">
-<meta property="og:updated_time" content="2017-02-03T15:20:23.928Z">
+<meta property="og:updated_time" content="2017-02-03T16:37:37.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web Tools(1)How to develop a servlet web application by netbeans">
-<meta name="twitter:description" content="1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.2.Give the project a name, mine is Test1. Then Next directly.3.The Server choose “Apache Tomcat 8.">
-<meta name="twitter:image" content="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-1.png">
+<meta name="twitter:title" content="categories">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -70,7 +53,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Web Tools(1)How to develop a servlet web application by netbeans | Shance Blog</title>
+<title>categories | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -80,7 +63,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -150,13 +133,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -169,13 +152,15 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/">主页</a></li>
+                            <li><a href="/">Home</a></li>
                         
-                            <li><a href="/archives/">所有文章</a></li>
+                            <li><a href="/archives/">Archieves</a></li>
                         
-                            <li><a href="/tags/">标签云</a></li>
+                            <li><a href="/categories">Categories</a></li>
                         
-                            <li><a href="/about/">关于我</a></li>
+                            <li><a href="/tags/">Tags</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
                         
                         </ul>
                     </nav>
@@ -244,13 +229,15 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/">主页</a></li>
+                    <li><a href="/">Home</a></li>
                 
-                    <li><a href="/archives/">所有文章</a></li>
+                    <li><a href="/archives/">Archieves</a></li>
                 
-                    <li><a href="/tags/">标签云</a></li>
+                    <li><a href="/categories">Categories</a></li>
                 
-                    <li><a href="/about/">关于我</a></li>
+                    <li><a href="/tags/">Tags</a></li>
+                
+                    <li><a href="/about/">About</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -268,13 +255,13 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Web-Tools-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/30/Web-Tools-1/" class="article-date">
-      <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">2017-01-30</time>
+      <a href="/categories/index.html" class="article-date">
+      <time datetime="2017-02-03T16:36:32.000Z" itemprop="datePublished">2017-02-03</time>
 </a>
 
 
@@ -289,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Web Tools(1)How to develop a servlet web application by netbeans
+      categories
     </h1>
   
 
@@ -306,74 +293,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1.Open the File-New Project, choose Java Web in Categories, and Web Application in Project, then Next.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-1.png" alt=""><br>2.Give the project a name, mine is Test1. Then Next directly.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-2.png" alt=""><br>3.The Server choose “Apache Tomcat 8.0”. Then Next.</p>
-<p>4.You should set your tomcat information.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-11.png" alt=""><br>Like that.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-12.png" alt=""><br>If your address is not right, it will show the words in red.<br> <img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-13.png" alt=""><br>5.Finish.</p>
-<p>6.You can see a file on the Projects tab, and right click it, choose New - Servlet.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-3.png" alt=""><br>Enter the Class Name, mine is named Quiz, and you’d better enter a Package Name.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-4.png" alt=""><br>7.Next. First, you should choose the checkbox “Add information to deployment descriptor(web.xml)”, so that the netbeans will help you create the web.xml, and you don’t need to write it by yourself.</p>
-<p>And you can change the Servlet Name or URL Pattern here, but I prefer not, so I won’t introduce that here.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-5.png" alt=""><br>Finish.</p>
-<p>8.Now you can see the Quiz.java, that’s the servlet file. You also can change your url-pattern in the web.xml, and that’s the name you enter in the browser, so, remember it, don’t mix it.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-6.png" alt=""><br>9.Run the project.</p>
-<p><strong>Or</strong> </p>
-<p>You can first open the <strong>Service</strong> near the Projects &amp; Files. Open the <strong>Servers</strong> here, <img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-7.png" alt="">and right click the Apache Tomcat 8.0, click the Start.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-8.png" alt=""><br>Then, you can see this page.<br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-9.png" alt=""><br>10.Text your url-pattern next in the browser, like that:<br><a href="http://localhost:8084/Test1/Quiz" target="_blank" rel="external">http://localhost:8084/Test1/Quiz</a><br><img src="https://shancezhao.github.io/2017/01/30/Web-Tools-1/webtools1-10.png" alt=""></p>
-<p><strong>Your port maybe not be 8084, that’s okay, but if you can’t open the first page or that page, please change your port in your tomcat’s setting.</strong></p>
+              <style>
+    .article-meta { display: none; }
+    #container .article .article-title { padding-right: 0; }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
+    }
+    .article-header:hover { border-left: none; }
+    .article-title { font-size: 1.6em }
+    .article-entry hr { margin: 0;}
+    .article-meta,
+    #container .article-info-post.article-info { display: none;}
+    #container .article .article-title { padding: 0; }
+</style>
 
+
+          
+        
       
     </div>
     
   </div>
   
     
-    <div class="copyright">
-        <p><span>Title:</span><a href="/2017/01/30/Web-Tools-1/">Web Tools(1)How to develop a servlet web application by netbeans</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
-        <p><span>Created:</span>2017-01-30, 13:12:45</p>
-        <p><span>Updated:</span>2017-02-03, 10:20:23</p>
-        <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/01/30/Web-Tools-1/" title="Web Tools(1)How to develop a servlet web application by netbeans">http://yoursite.com/2017/01/30/Web-Tools-1/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/30/Web-Tools-1/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/01/30/hello-world/">
-                    Hello World
-                </a>
-            </div>
-        
-    </nav>
 
   
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
-
-    <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
-    </script>
 
 
 
@@ -391,7 +340,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Web Tools(1)How to develop a servlet web application by netbeans　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"categories　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -404,26 +353,6 @@
 
 
 
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
-        
-
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/01/30/hello-world/" title="Next: Hello World">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-1/">Web Tools(1)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/The-Differences-between-js-jQuery/">The Differences between js & jQuery</a></li></ul>
 
 
 
@@ -439,15 +368,12 @@
                 <i class="fa fa-copyright"></i> 
                 2017 Shance Zhao
             </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -456,7 +382,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -472,7 +398,7 @@
         $(document).ready(function() {
             var iPad = window.navigator.userAgent.indexOf('iPad');
             if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColorList = ["#FFFFFF", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
                 var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
@@ -489,9 +415,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
@@ -501,7 +427,7 @@
             
             
             
-            
+             categories: ".article-category a, a.tag-list-link", 
             
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
