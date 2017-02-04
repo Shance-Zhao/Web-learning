@@ -15,13 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="https://shancezhao.github.io/tags/index.html">
+<meta name="description" content="JQuery is a lightweight Javascript library or framework. Javascript is a programming language, while jQuery is a library.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Tools(1) The Differences between js & jQuery">
+<meta property="og:url" content="https://shancezhao.github.io/2016/11/15/Web-Tools-1/index.html">
 <meta property="og:site_name" content="Shance Blog">
-<meta property="og:updated_time" content="2017-02-03T22:48:11.786Z">
+<meta property="og:description" content="JQuery is a lightweight Javascript library or framework. Javascript is a programming language, while jQuery is a library.">
+<meta property="og:updated_time" content="2017-02-03T23:06:35.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
+<meta name="twitter:title" content="Web Tools(1) The Differences between js & jQuery">
+<meta name="twitter:description" content="JQuery is a lightweight Javascript library or framework. Javascript is a programming language, while jQuery is a library.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tags | Shance Blog</title>
+<title>Web Tools(1) The Differences between js &amp; jQuery | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,7 +66,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,11 +260,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Web-Tools-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-02-03T22:39:19.000Z" itemprop="datePublished">2017-02-03</time>
+      <a href="/2016/11/15/Web-Tools-1/" class="article-date">
+      <time datetime="2016-11-16T01:45:55.000Z" itemprop="datePublished">2016-11-15</time>
 </a>
 
 
@@ -276,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      Web Tools(1) The Differences between js &amp; jQuery
     </h1>
   
 
@@ -284,8 +287,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -293,96 +304,82 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <p>JQuery is a lightweight Javascript library or framework. Javascript is a programming language, while jQuery is a library. By using jQuery, we can use less code finishing more functions. But jQuery is slower than Javascript, especially some people like using abuse of selectors and do not use chainable functions to write.</p>
+<h2 id="1-Positioning-element"><a href="#1-Positioning-element" class="headerlink" title="1. Positioning element"></a>1. Positioning element</h2><p> <strong>JS</strong></p>
+<p>document.getElementById(“abc”)</p>
+<p> <strong>JQuery</strong></p>
+<p>$(“#abc”)    : This is positioning by id<br>$(“.abc”)    : This is positioning by class<br>$(“div”)    : This is position by tag</p>
+<p> To pay attention that JS retruns this element, and jQuery returns a JS object, and all examples below assume that have alreay positioned the element abc.</p>
+<h2 id="2-Change-the-content-of-elements"><a href="#2-Change-the-content-of-elements" class="headerlink" title="2. Change the content of elements"></a>2. Change the content of elements</h2><p> JS<br> abc.innerHTML = “test”;<br> JQuery<br> abc.html(“test”);</p>
+<h2 id="3-Assign-values"><a href="#3-Assign-values" class="headerlink" title="3. Assign values"></a>3. Assign values</h2><p> JS<br> abc.value = “valueabc”;<br> JQuery<br> abc.val(“valueabc”);</p>
+<h2 id="4-modify-styles-of-elements"><a href="#4-modify-styles-of-elements" class="headerlink" title="4. modify styles of elements"></a>4. modify styles of elements</h2><p> JS<br> abc.style.fontSize=size;<br> JQuery<br> abc.css(‘font-size’,18);</p>
+<p> JS<br> abc.className = “aaa”;<br> JQuery<br> abc.removeClass();<br> abc.addClass(“aaa”);</p>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/checkbox/" style="font-size: 16px; color: #808080">checkbox</a> <a href="/tags/getParameterValues/" style="font-size: 16px; color: #808080">getParameterValues</a> <a href="/tags/jQuery/" style="font-size: 16px; color: #808080">jQuery</a> <a href="/tags/javascript/" style="font-size: 16px; color: #808080">javascript</a> <a href="/tags/netbeans/" style="font-size: 16px; color: #808080">netbeans</a> <a href="/tags/servlet/" style="font-size: 35px; color: #000">servlet</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js &amp; jQuery</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
+        <p><span>Created:</span>2016-11-15, 20:45:55</p>
+        <p><span>Updated:</span>2017-02-03, 18:06:35</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/11/15/Web-Tools-1/" title="Web Tools(1) The Differences between js &amp; jQuery">https://shancezhao.github.io/2016/11/15/Web-Tools-1/</a>
+            <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2016/11/15/Web-Tools-1/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/01/30/Web-Tools-2/">
+                    Web Tools(2)How to develop a servlet web application by netbeans
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/11/10/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Positioning-element"><span class="toc-text">1. Positioning element</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Change-the-content-of-elements"><span class="toc-text">2. Change the content of elements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Assign-values"><span class="toc-text">3. Assign values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-modify-styles-of-elements"><span class="toc-text">4. modify styles of elements</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
 
@@ -400,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Tags　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Web Tools(1) The Differences between js & jQuery　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -413,6 +410,50 @@
 
 
 
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://shancezhao.github.io/2016/11/15/Web-Tools-1/';
+            this.page.identifier = '2016/11/15/Web-Tools-1/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-shancezhao-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/01/30/Web-Tools-2/" title="Pre: Web Tools(2)How to develop a servlet web application by netbeans">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/11/10/hello-world/" title="Next: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
 
 
 

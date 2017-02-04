@@ -15,13 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="https://shancezhao.github.io/tags/index.html">
+<meta name="description" content="Solve the questions about request.getParameterValues.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Tools (3) Questions about request.getParameterValues("")">
+<meta property="og:url" content="https://shancezhao.github.io/2017/02/04/Web-Tools-3/index.html">
 <meta property="og:site_name" content="Shance Blog">
-<meta property="og:updated_time" content="2017-02-03T22:48:11.786Z">
+<meta property="og:description" content="Solve the questions about request.getParameterValues.">
+<meta property="og:updated_time" content="2017-02-04T17:28:41.730Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
+<meta name="twitter:title" content="Web Tools (3) Questions about request.getParameterValues("")">
+<meta name="twitter:description" content="Solve the questions about request.getParameterValues.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tags | Shance Blog</title>
+<title>Web Tools (3) Questions about request.getParameterValues(&quot;&quot;) | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,7 +66,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,11 +260,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Web-Tools-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-02-03T22:39:19.000Z" itemprop="datePublished">2017-02-03</time>
+      <a href="/2017/02/04/Web-Tools-3/" class="article-date">
+      <time datetime="2017-02-04T17:27:45.000Z" itemprop="datePublished">2017-02-04</time>
 </a>
 
 
@@ -276,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      Web Tools (3) Questions about request.getParameterValues(&quot;&quot;)
     </h1>
   
 
@@ -284,8 +287,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/checkbox/">checkbox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/getParameterValues/">getParameterValues</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -293,96 +304,68 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><h2 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h2><p>1.In request.getParameterValues(“”), what in the “” is its name, not the id, and name can be the same, and then it will get a String Array.</p>
+<p>2.If there is a list of checkbox in HTML should be submitted to the Servlet, and all of them have the same name, we should get the checkboxes’s value.<br>When we submit, the Browser will put the values of the checkboxes into a String Array. In Servlet, we can use that<br><strong>String[] chk = request.getParameterValues(“checkbox’s name);</strong><br>and then can get all the values of checkboxes we choose. But if we don’t choose that checkbox, the chk will be null.</p>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/checkbox/" style="font-size: 16px; color: #808080">checkbox</a> <a href="/tags/getParameterValues/" style="font-size: 16px; color: #808080">getParameterValues</a> <a href="/tags/jQuery/" style="font-size: 16px; color: #808080">jQuery</a> <a href="/tags/javascript/" style="font-size: 16px; color: #808080">javascript</a> <a href="/tags/netbeans/" style="font-size: 16px; color: #808080">netbeans</a> <a href="/tags/servlet/" style="font-size: 35px; color: #000">servlet</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues(&quot;&quot;)</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
+        <p><span>Created:</span>2017-02-04, 12:27:45</p>
+        <p><span>Updated:</span>2017-02-04, 12:28:41</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/04/Web-Tools-3/" title="Web Tools (3) Questions about request.getParameterValues(&quot;&quot;)">https://shancezhao.github.io/2017/02/04/Web-Tools-3/</a>
+            <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2017/02/04/Web-Tools-3/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/30/Web-Tools-2/">
+                    Web Tools(2)How to develop a servlet web application by netbeans
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text">#</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-text">#</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
 
@@ -400,7 +383,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Tags　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Web Tools (3) Questions about request.getParameterValues("")　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -413,6 +396,48 @@
 
 
 
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://shancezhao.github.io/2017/02/04/Web-Tools-3/';
+            this.page.identifier = '2017/02/04/Web-Tools-3/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-shancezhao-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/01/30/Web-Tools-2/" title="Next: Web Tools(2)How to develop a servlet web application by netbeans">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
 
 
 
