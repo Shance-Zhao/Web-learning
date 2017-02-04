@@ -270,6 +270,15 @@
       <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">2017-01-30</time>
 </a>
 
+ 
+    <a href="/2017/01/30/Web-Tools-1/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/01/30/Web-Tools-1/"></span>
+        
+    </a>
 
     </div>
   
@@ -338,6 +347,15 @@
       <time datetime="2017-01-30T18:01:38.893Z" itemprop="datePublished">2017-01-30</time>
 </a>
 
+ 
+    <a href="/2017/01/30/hello-world/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/01/30/hello-world/"></span>
+        
+    </a>
 
     </div>
   
@@ -402,6 +420,15 @@
       <time datetime="2016-11-16T01:45:55.000Z" itemprop="datePublished">2016-11-15</time>
 </a>
 
+ 
+    <a href="/2016/11/15/The-Differences-between-js-jQuery/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2016/11/15/The-Differences-between-js-jQuery/"></span>
+        
+    </a>
 
     </div>
   
@@ -514,6 +541,26 @@
         })
     </script>
 
+
+    
+
+    
+        <script id="dsq-count-scr" src="//https-shancezhao-github-io.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
 
