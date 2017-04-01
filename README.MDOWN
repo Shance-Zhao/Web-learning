@@ -1,0 +1,5 @@
+# shancezhao.github.io
+Blog url: https://shancezhao.github.io/
+
+how to upload on hexo blog:
+hexo generate
