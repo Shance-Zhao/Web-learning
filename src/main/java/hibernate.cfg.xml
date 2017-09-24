@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">12345</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/final</property>
+        <property name="hibernate.connection.username">root</property>
+        
+         <property name="hibernate.hbm2ddl.auto">update</property>   
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        
+        <mapping class="com.shopping.pojo.Person" />
+		<mapping class="com.shopping.pojo.Admin" />
+		<mapping class="com.shopping.pojo.Customer" />
+		<mapping class="com.shopping.pojo.Book" />
+		<mapping class="com.shopping.pojo.Food" />
+		<mapping class="com.shopping.pojo.Product" />
+		<mapping class="com.shopping.pojo.General" />
+<!-- 		<mapping class="com.shopping.pojo.Cart" /> -->
+		<mapping class="com.shopping.pojo.Order" />
+        
+    </session-factory>
+</hibernate-configuration>

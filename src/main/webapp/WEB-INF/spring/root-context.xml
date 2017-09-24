@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+	
+		<bean id="adminValidator" class="com.shopping.validator.AdminValidator"></bean>
+		<bean id="adminDao" class="com.shopping.dao.AdminDAO" ></bean>
+	
+		<bean id="customerValidator" class="com.shopping.validator.CustomerValidator"></bean>
+		<bean id="customerDao" class="com.shopping.dao.CustomerDAO" ></bean>
+		
+		<bean id="generalValidator" class="com.shopping.validator.GeneralValidator"></bean>
+		<bean id="generalDao" class="com.shopping.dao.GeneralDAO" ></bean>
+		
+		<bean id="bookValidator" class="com.shopping.validator.BookValidator"></bean>
+		<bean id="bookDao" class="com.shopping.dao.BookDAO" ></bean>
+		
+	<!-- 	<bean id="cartValidator" class="com.shopping.validator.CartValidator"></bean>
+		<bean id="cartDao" class="com.shopping.dao.CartDAO" ></bean>
+ -->		
+		<bean id="foodValidator" class="com.shopping.validator.FoodValidator"></bean>
+		<bean id="foodDao" class="com.shopping.dao.FoodDAO" ></bean>
+		
+		<bean id="orderDao" class="com.shopping.dao.OrderDAO" ></bean>
+		
+		<bean id="productValidator" class="com.shopping.validator.GeneralValidator"></bean>
+		<bean id="productDao" class="com.shopping.dao.ProductDAO" ></bean>
+		
+</beans>
