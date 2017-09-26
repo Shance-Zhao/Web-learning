@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://shancezhao.github.io/2017/09/26/Big-Data-2/index.html">
 <meta property="og:site_name" content="Shance Blog">
 <meta property="og:description" content="Understand how the MapReduce in Hadoop runs">
-<meta property="og:updated_time" content="2017-09-26T13:23:07.472Z">
+<meta property="og:updated_time" content="2017-09-26T13:30:27.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Big Data (2) Understand how the MapReduce in Hadoop runs">
 <meta name="twitter:description" content="Understand how the MapReduce in Hadoop runs">
@@ -302,13 +302,26 @@
           
         <p><strong>该文转载自”<a href="http://www.cnblogs.com/taven/archive/2012/11/03/2752076.html" target="_blank" rel="external">http://www.cnblogs.com/taven/archive/2012/11/03/2752076.html</a>“</strong></p>
 <h2 id="什么是MapReduce"><a href="#什么是MapReduce" class="headerlink" title="什么是MapReduce"></a>什么是MapReduce</h2><p>首先MapReduce它是两个英文单词组成的，Map表示映射，Reduce表示化简，它是一种编程模型，用于大规模数据集（大于1TB）的并行运算，主要思想来自函数式编程。<br>在Hadoop中，MapReduce过程分三个步骤：Map(主要是分解并行的任务)、Combine(主要是为了提高Reduce的效率)和Reduce(把处理后的结果再汇总起来) 。</p>
-<p>接下来运行一个Hadoop作业的启动代码:<br>    Job job = new Job(conf, “word count”);<br>    job.setJarByClass(WordCount.class);<br>    job.setMapperClass(TokenizerMapper.class);<br>    job.setCombinerClass(IntSumReducer.class);<br>    job.setReducerClass(IntSumReducer.class);<br>    job.setOutputKeyClass(Text.class);<br>    job.setOutputValueClass(IntWritable.class);<br>    FileInputFormat.addInputPath(job, new Path(otherArgs[0]));<br>    FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));</p>
-<pre><code>System.exit(job.waitForCompletion(true) ? 0 : 1);
+<h2 id="MapReduce实现"><a href="#MapReduce实现" class="headerlink" title="MapReduce实现"></a>MapReduce实现</h2><p>接下来运行一个Hadoop作业的启动代码：</p>
+<pre><code>Job job = new Job(conf, &quot;word count&quot;);
+job.setJarByClass(WordCount.class);
+job.setMapperClass(TokenizerMapper.class);
+job.setCombinerClass(IntSumReducer.class);
+job.setReducerClass(IntSumReducer.class);
+job.setOutputKeyClass(Text.class);
+job.setOutputValueClass(IntWritable.class);
+FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
+FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
+
+System.exit(job.waitForCompletion(true) ? 0 : 1);
 </code></pre><p>在运行一个Hadoop作业之前，先得指定MapperClass, CombinerClass,ReducerClass。</p>
-<p>假设我们交给Hadoop去分析的一个文本内容为：<br>    lixy csy lixy zmde nitamade hehe</p>
-<pre><code>realy amoeba woyou weibo hehe
-</code></pre><p>好了，提供的内容很简单，就是3行文本，第1行文本包含n个单词，第2行是空的，第3行也包含n个单词，单词与单词之间用空格隔开，下面我们来看看MapperClass 是如何实现的，又是如何运行的呢？看看 TokenizerMapper 的代码：<br>     public class TokenizerMapper extends Mapper<object, text,="" intwritable=""> {</object,></p>
-<pre><code>    private final static IntWritable one = new IntWritable(1);
+<p>假设我们交给Hadoop去分析的一个文本内容为：</p>
+<pre><code>lixy csy lixy zmde nitamade hehe
+
+realy amoeba woyou weibo hehe
+</code></pre><p>好了，提供的内容很简单，就是3行文本，第1行文本包含n个单词，第2行是空的，第3行也包含n个单词，单词与单词之间用空格隔开，下面我们来看看MapperClass 是如何实现的，又是如何运行的呢？看看 TokenizerMapper 的代码： </p>
+<pre><code>public class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+    private final static IntWritable one = new IntWritable(1);
     private Text word = new Text();
 
     public void map(Object key, Text value, Context context)    throws IOException, InterruptedException {
@@ -323,17 +336,24 @@
             word.set(tmp);
 
             context.write(word, one);
-            System.out.println(&quot;tmp:&quot;+tmp+&quot; one:&quot;+one);
-
+            System.out.println(&quot;tmp:&quot;+tmp+&quot; one:&quot;+one);            
         }
-
         System.out.println(&quot;context:&quot;+context.toString());
-
     }
 }
-</code></pre><p>这时要说一下”IntWritable one = new IntWritable(1);”的用意，因为我们不管一个单词会出现几次，只要出现，我们就计算1次，所以”context.write(word, one)”这行代码将一个单词写入的时候，值永远是1；</p>
-<p>在运行的时候，根据你文件中内容的情况，上面的 map(Object key, Text value, Context context) 方法可能会被调用多次，将本例子提供的文件内容执行后，控制台输出内容如下（为了方便阅读，我添加了一些换行）：<br>    TokenizerMapper.map…<br>    Map key:0 Map value:lixy csy lixy zmde nitamade hehe<br>    tmp:lixy one:1<br>    tmp:csy one:1<br>    tmp:lixy one:1<br>    tmp:zmde one:1<br>    tmp:nitamade one:1<br>    tmp:hehe one:1<br>    context:org.apache.hadoop.mapreduce.Mapper$Context@1af0b4a3</p>
+</code></pre><p>这时要说一下”<em>IntWritable one = new IntWritable(1);</em>“的用意，因为我们不管一个单词会出现几次，只要出现，我们就计算1次，所以”context.write(word, one)”这行代码将一个单词写入的时候，值永远是1；</p>
+<p>在运行的时候，根据你文件中内容的情况，上面的 map(Object key, Text value, Context context) 方法可能会被调用多次，将本例子提供的文件内容执行后，控制台输出内容如下（为了方便阅读，我添加了一些换行）：</p>
 <pre><code>TokenizerMapper.map...
+Map key:0 Map value:lixy csy lixy zmde nitamade hehe
+tmp:lixy one:1
+tmp:csy one:1
+tmp:lixy one:1
+tmp:zmde one:1
+tmp:nitamade one:1
+tmp:hehe one:1
+context:org.apache.hadoop.mapreduce.Mapper$Context@1af0b4a3
+
+TokenizerMapper.map...
 Map key:34 Map value:
 context:org.apache.hadoop.mapreduce.Mapper$Context@1af0b4a3
 
@@ -393,8 +413,10 @@ val.get():1
 Reduce key:zmde Reduce result:1
 Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@d5d4de6 Result:1
 </code></pre><p>从TokenizerMapper的 map(Object key, Text value, Context context) 调用的信息输出情况可以分析出，文件内容中有两行，所以该方法一共调用了2次（因为TextInputFormat类型的，都是按行处理）。<br>每一行的内容会在value参数中传进来，也就是说每一行的内容都对应了一个key，这个key为此行的开头位置在本文件中的所在位置（所以第1行的key是0，第2行的key是34，第3行的key是36），一般为数字的。<br>在这个map方法中，我们可以加入一些自己的处理逻辑，比如根据空格来取得每个单词，然后我们需要将处理后的结果，写入到 context 参数中，便于hadoop处理完后续的处理逻辑。（这里我们需要注意的是“IntWritable one”变量都是数值1）。</p>
-<p>接下来我们再看reduce的过程，先看看 IntSumReducer 的代码:<br>    public class IntSumReducer extends    Reducer<text, intwritable,="" text,="" intwritable=""> {</text,></p>
-<pre><code>    private IntWritable result = new IntWritable();
+<p>接下来我们再看reduce的过程，先看看 IntSumReducer 的代码:</p>
+<pre><code>public class IntSumReducer extends    Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
+
+    private IntWritable result = new IntWritable();
 
     public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) throws IOException, InterruptedException {
 
@@ -417,8 +439,13 @@ Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@d5d4de6 Result:1
 
     }
 }
-</code></pre><p>执行调用后，控制台输出如下内容:<br>    IntSumReducer.reduce…<br>    val.get():1<br>    Reduce key:amoeba Reduce result:1<br>    Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@6c04ab2f Result:1</p>
+</code></pre><p>执行调用后，控制台输出如下内容:</p>
 <pre><code>IntSumReducer.reduce...
+val.get():1
+Reduce key:amoeba Reduce result:1
+Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@6c04ab2f Result:1
+
+IntSumReducer.reduce...
 val.get():1
 Reduce key:csy Reduce result:1
 Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@6c04ab2f Result:1
@@ -469,7 +496,7 @@ Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@6c04ab2f Result:1
         <p><span>Title:</span><a href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
         <p><span>Created:</span>2017-09-26, 09:10:00</p>
-        <p><span>Updated:</span>2017-09-26, 09:23:07</p>
+        <p><span>Updated:</span>2017-09-26, 09:30:27</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2017/09/26/Big-Data-2/" title="Big Data (2) Understand how the MapReduce in Hadoop runs">https://shancezhao.github.io/2017/09/26/Big-Data-2/</a>
             <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2017/09/26/Big-Data-2/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -499,7 +526,7 @@ Reduce Context:org.apache.hadoop.mapreduce.Reducer$Context@6c04ab2f Result:1
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是MapReduce"><span class="toc-text">什么是MapReduce</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是MapReduce"><span class="toc-text">什么是MapReduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MapReduce实现"><span class="toc-text">MapReduce实现</span></a></li></ol>
         
     </div>
     <style>
