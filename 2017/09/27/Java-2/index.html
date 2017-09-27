@@ -15,12 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shance Blog">
-<meta property="og:url" content="https://shancezhao.github.io/archives/2017/index.html">
+<meta name="description" content="插入排序简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java (2) Insertion Sort 插入排序">
+<meta property="og:url" content="https://shancezhao.github.io/2017/09/27/Java-2/index.html">
 <meta property="og:site_name" content="Shance Blog">
+<meta property="og:description" content="插入排序简介">
+<meta property="og:image" content="https://c1.staticflickr.com/5/4421/37353661601_f23c55bfdf_c.jpg">
+<meta property="og:updated_time" content="2017-09-27T16:06:20.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shance Blog">
+<meta name="twitter:title" content="Java (2) Insertion Sort 插入排序">
+<meta name="twitter:description" content="插入排序简介">
+<meta name="twitter:image" content="https://c1.staticflickr.com/5/4421/37353661601_f23c55bfdf_c.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017 | Shance Blog</title>
+<title>Java (2) Insertion Sort 插入排序 | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +68,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,319 +258,222 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Java-2" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/27/Java-2/" class="archive-article-date">
-      <time datetime="2017-09-27T15:50:30.000Z" itemprop="datePublished">09-27</time>
+    <div class="article-meta">
+      <a href="/2017/09/27/Java-2/" class="article-date">
+      <time datetime="2017-09-27T15:50:30.000Z" itemprop="datePublished">2017-09-27</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java (2) Insertion Sort 插入排序
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java排序/">Java排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>工作原理：<br>设有一组关键字｛K1， K2，…， Kn｝.排序开始就认为 K1 是一个有序序列，让 K2 插入上述表长为 1 的有序序列，使之成为一个表长为 2 的有序序列；然后让 K3 插入上述表长为 2 的有序序列，使之成为一个表长为 3 的有序序列；依次类推，最后让 Kn 插入上述表长为 n-1 的有序序列，得一个表长为 n 的有序序列。<br><strong>具体算法描述如下</strong>：</p>
+<ol>
+<li>从第一个元素开始，该元素可以认为已经被排序取出下一个元素</li>
+<li>在已经排序的元素序列中从后向前扫描</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
+<li>重复步骤 3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置后</li>
+<li>重复步骤 2~5<br>也可以使用二分查找法来减少比较操作的次数。</li>
+</ol>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="https://c1.staticflickr.com/5/4421/37353661601_f23c55bfdf_c.jpg" alt=""></p>
+<h2 id="Java语言实现"><a href="#Java语言实现" class="headerlink" title="Java语言实现"></a>Java语言实现</h2><pre><code>public static void main(String[] args) {
+int[] array={7,6,8,1,5};
+int temp;
+for(int i=1;i&lt;array.length;i++)
+{
+    temp=array[i];
+    for(int j=i;j&gt;0;j--)
+    {
+        if(array[j-1]&gt;temp){
+            array[j]=array[j-1];
+            array[j-1]=temp;
+        }
+        else{
+            array[j]=temp;
+            break;
+        }
+    }
+}
+for(int a=0;a&lt;array.length;a++)
+{
+    System.out.print(array[a]);
+}
+}
+</code></pre>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
+        <p><span>Created:</span>2017-09-27, 11:50:30</p>
+        <p><span>Updated:</span>2017-09-27, 12:06:20</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/09/27/Java-2/" title="Java (2) Insertion Sort 插入排序">https://shancezhao.github.io/2017/09/27/Java-2/</a>
+            <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2017/09/27/Java-2/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/09/27/Java-1/">
+                    Java (1) Selection Sort 选择排序
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/27/Java-1/" class="archive-article-date">
-      <time datetime="2017-09-27T14:23:40.000Z" itemprop="datePublished">09-27</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法原理"><span class="toc-text">算法原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java语言实现"><span class="toc-text">Java语言实现</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="Share to Twitter"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="Share to Sina Weibo"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="Share with QQ friends"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="Copy"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="Share with Email"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="Article QR codes"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Java (2) Insertion Sort 插入排序　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://shancezhao.github.io/2017/09/27/Java-2/';
+            this.page.identifier = '2017/09/27/Java-2/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-shancezhao-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/09/27/Java-1/" title="Next: Java (1) Selection Sort 选择排序">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java排序/">Java排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/26/Big-Data-2/" class="archive-article-date">
-      <time datetime="2017-09-26T13:10:00.000Z" itemprop="datePublished">09-26</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/Big-Data-1/">Big Data (1) How to install hadoop3.0.0-alpha in Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Web-Tools-4/">Web Tools (4) Errors when using annotation in STS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/Alibaba-Java interview/">阿里巴巴Java研发工程师(实习)视频面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Big-data/">Big data</a>
-    </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/19/Big-Data-1/" class="archive-article-date">
-      <time datetime="2017-09-19T17:23:47.000Z" itemprop="datePublished">09-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/19/Big-Data-1/">Big Data (1) How to install hadoop3.0.0-alpha in Ubuntu</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Big-data/">Big data</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop3-0-0/">Hadoop3.0.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu16-04/">Ubuntu16.04</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/04/01/Web-Tools-4/" class="archive-article-date">
-      <time datetime="2017-04-01T18:51:47.000Z" itemprop="datePublished">04-01</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/01/Web-Tools-4/">Web Tools (4) Errors when using annotation in STS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STS/">STS</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/16/Alibaba-Java interview/" class="archive-article-date">
-      <time datetime="2017-03-16T23:07:40.000Z" itemprop="datePublished">03-16</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/16/Alibaba-Java interview/">阿里巴巴Java研发工程师(实习)视频面试题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Java/">Java</a><a class="article-category-link" href="/categories/Java/面试/">面试</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/02/04/Web-Tools-3/" class="archive-article-date">
-      <time datetime="2017-02-04T17:27:45.000Z" itemprop="datePublished">02-04</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues(&quot;&quot;)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/checkbox/">checkbox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/getParameterValues/">getParameterValues</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/30/Web-Tools-2/" class="archive-article-date">
-      <time datetime="2017-01-30T18:12:45.000Z" itemprop="datePublished">01-30</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/netbeans/">netbeans</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/">servlet</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
