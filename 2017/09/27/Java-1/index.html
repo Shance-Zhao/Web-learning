@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Shance Blog">
 <meta property="og:description" content="选择排序简介">
 <meta property="og:image" content="https://c1.staticflickr.com/5/4397/37096958510_f04fbd2316_c.jpg">
-<meta property="og:updated_time" content="2017-09-27T15:07:14.053Z">
+<meta property="og:updated_time" content="2017-09-27T16:16:50.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java (1) Selection Sort 选择排序">
 <meta name="twitter:description" content="选择排序简介">
@@ -183,7 +183,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop3-0-0/">Hadoop3.0.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java排序/">Java排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STS/">STS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu16-04/">Ubuntu16.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/checkbox/">checkbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getParameterValues/">getParameterValues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netbeans/">netbeans</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop/">Hadoop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hadoop3-0-0/">Hadoop3.0.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java排序/">Java排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STS/">STS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu16-04/">Ubuntu16.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/checkbox/">checkbox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getParameterValues/">getParameterValues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netbeans/">netbeans</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li></ul>
                     </div>
                 </section>
                 
@@ -305,19 +305,23 @@
         <h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>工作原理：首先在未排序的序列中找到最小（最大）元素，存放到排序队列的起始位置，然后，再从剩余元素中继续查找最小（大）元素，放到已排序队列的末尾（即接着往后存放）。以此类推，知道所有元素排列完毕。</p>
 <p>如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的序列进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="https://c1.staticflickr.com/5/4397/37096958510_f04fbd2316_c.jpg" alt=""></p>
-<h2 id="Java语言实现"><a href="#Java语言实现" class="headerlink" title="Java语言实现"></a>Java语言实现</h2><pre><code>int temp;
-for(int i=0;i&lt;n;i++)
-{
-    int minIndex = i;
-    for(int j=i;j&lt;n;j++)
-    {
-        if(arr[minIndex]&gt;arr[j])
-        {
-            minIndex=j;
+<h2 id="Java语言实现"><a href="#Java语言实现" class="headerlink" title="Java语言实现"></a>Java语言实现</h2><pre><code>public static void main(String[] args) {
+    int[] array = {7, 6, 8, 1, 5};
+    int temp;
+    for (int i = 0; i &lt; array.length; i++) {
+        int minIndex = i;
+        for (int j = i; j &lt; array.length; j++) {
+            if (array[minIndex] &gt; array[j]) {
+                minIndex = j;
+            }
         }
-        temp = arr[i];
-        arr[i]=arr[minIndex];
-        arr[minIndex]=temp;
+        temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
+
+    }
+    for (int a = 0; a &lt; array.length; a++) {
+        System.out.print(array[a]);
     }
 }
 </code></pre>
@@ -331,7 +335,7 @@ for(int i=0;i&lt;n;i++)
         <p><span>Title:</span><a href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
         <p><span>Created:</span>2017-09-27, 10:23:40</p>
-        <p><span>Updated:</span>2017-09-27, 11:07:14</p>
+        <p><span>Updated:</span>2017-09-27, 12:16:50</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2017/09/27/Java-1/" title="Java (1) Selection Sort 选择排序">https://shancezhao.github.io/2017/09/27/Java-1/</a>
             <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2017/09/27/Java-1/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -459,7 +463,7 @@ for(int i=0;i&lt;n;i++)
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/Big-Data-1/">Big Data (1) How to install hadoop3.0.0-alpha in Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Web-Tools-4/">Web Tools (4) Errors when using annotation in STS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/Alibaba-Java interview/">阿里巴巴Java研发工程师(实习)视频面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Big-Data-3/">Big Data (3) PageRank</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/Big-Data-1/">Big Data (1) How to install hadoop3.0.0-alpha in Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Web-Tools-4/">Web Tools (4) Errors when using annotation in STS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/Alibaba-Java interview/">阿里巴巴Java研发工程师(实习)视频面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
 
 
 

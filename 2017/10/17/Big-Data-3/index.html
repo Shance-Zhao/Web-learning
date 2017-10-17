@@ -15,12 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shance Blog">
-<meta property="og:url" content="https://shancezhao.github.io/archives/2016/index.html">
+<meta name="description" content="Learn the PageRank and its formula">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Big Data (3) PageRank">
+<meta property="og:url" content="https://shancezhao.github.io/2017/10/17/Big-Data-3/index.html">
 <meta property="og:site_name" content="Shance Blog">
+<meta property="og:description" content="Learn the PageRank and its formula">
+<meta property="og:image" content="https://c1.staticflickr.com/5/4495/37048921634_eeeb93d984_n.jpg">
+<meta property="og:updated_time" content="2017-10-17T17:27:44.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shance Blog">
+<meta name="twitter:title" content="Big Data (3) PageRank">
+<meta name="twitter:description" content="Learn the PageRank and its formula">
+<meta name="twitter:image" content="https://c1.staticflickr.com/5/4495/37048921634_eeeb93d984_n.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016 | Shance Blog</title>
+<title>Big Data (3) PageRank | Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +68,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,89 +258,190 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Big-Data-3" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/15/Web-Tools-1/" class="archive-article-date">
-      <time datetime="2016-11-16T01:45:55.000Z" itemprop="datePublished">11-15</time>
+    <div class="article-meta">
+      <a href="/2017/10/17/Big-Data-3/" class="article-date">
+      <time datetime="2017-10-17T17:10:00.000Z" itemprop="datePublished">2017-10-17</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js &amp; jQuery</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Big Data (3) PageRank
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/Big-data/">Big data</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PageRank/">PageRank</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/10/hello-world/" class="archive-article-date">
-      <time datetime="2016-11-10T18:12:45.000Z" itemprop="datePublished">11-10</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <h2 id="PageRank算法原理"><a href="#PageRank算法原理" class="headerlink" title="PageRank算法原理"></a>PageRank算法原理</h2><p>假设有4个页面：A,B,C,D. 如果所有页面都指向A，则A的PR(PageRank)值将是B,C,D的PageRank总和。<br>那么假设按如下链接，<br><img src="https://c1.staticflickr.com/5/4495/37048921634_eeeb93d984_n.jpg" alt=""><br>考虑到一个页面总票数为1票，所以B的票数变为1/2，半票给A，半票给C；同理，D投出的票为1/3，C为1票，全给了A。<br>那么A的PR值为：<br>PR(A)=PR(B)/2+PR(C)+PR(D)/3<br>一般而言，我们就是根据每个网页的链出总数来得到每个网页的PR值：<br>PR(A) = PR(B)/L(B)+PR(C)/L(C)+PR(D)/L(D)<br>其中，L(B),L(C),L(D)分别代表这3个网页的链出总数。<br>最后，所有这些被换算为一个百分比再乘上一个系数，也就是加权平均。由于<strong>“没有向外链接的页面”传递出去的PageRank为0</strong>，所以Google通过数学系统给了每个页面一个最小值：<br>PR(A) = (PR(B)/L(B)+PR(C)/L(C)+PR(D)/L(D))*d + (1-d)/N<br>其中N为网页总数。</p>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/10/17/Big-Data-3/">Big Data (3) PageRank</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Shance Zhao</a></p>
+        <p><span>Created:</span>2017-10-17, 13:10:00</p>
+        <p><span>Updated:</span>2017-10-17, 13:27:44</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/10/17/Big-Data-3/" title="Big Data (3) PageRank">https://shancezhao.github.io/2017/10/17/Big-Data-3/</a>
+            <span class="copy-path" data-clipboard-text="From https://shancezhao.github.io/2017/10/17/Big-Data-3/　　By Shance Zhao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/09/27/Java-2/">
+                    Java (2) Insertion Sort 插入排序
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PageRank算法原理"><span class="toc-text">PageRank算法原理</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="Share to Twitter"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="Share to Sina Weibo"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="Share with QQ friends"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="Copy"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="Share with Email"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="Article QR codes"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Big Data (3) PageRank　| Shance Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://shancezhao.github.io/2017/10/17/Big-Data-3/';
+            this.page.identifier = '2017/10/17/Big-Data-3/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-shancezhao-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/09/27/Java-2/" title="Next: Java (2) Insertion Sort 插入排序">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Big-Data-3/">Big Data (3) PageRank</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-2/">Java (2) Insertion Sort 插入排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/Java-1/">Java (1) Selection Sort 选择排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/Big-Data-2/">Big Data (2) Understand how the MapReduce in Hadoop runs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/Big-Data-1/">Big Data (1) How to install hadoop3.0.0-alpha in Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Web-Tools-4/">Web Tools (4) Errors when using annotation in STS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/Alibaba-Java interview/">阿里巴巴Java研发工程师(实习)视频面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/04/Web-Tools-3/">Web Tools (3) Questions about request.getParameterValues("")</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/Web-Tools-2/">Web Tools(2)How to develop a servlet web application by netbeans</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js & jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/10/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

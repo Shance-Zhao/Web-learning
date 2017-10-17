@@ -14,10 +14,13 @@
 <meta name="author" content="Shance Zhao" />
 
 
+    
+    
+
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shance Blog">
-<meta property="og:url" content="https://shancezhao.github.io/archives/2016/index.html">
+<meta property="og:url" content="https://shancezhao.github.io/page/2/index.html">
 <meta property="og:site_name" content="Shance Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shance Blog">
@@ -48,11 +51,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016 | Shance Blog</title>
+<title>Shance Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -61,9 +66,9 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: false,
+        isHome: true,
         isPost: false,
-        isArchive: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -254,87 +259,80 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/15/Web-Tools-1/" class="archive-article-date">
-      <time datetime="2016-11-16T01:45:55.000Z" itemprop="datePublished">11-15</time>
+    <div class="article-meta">
+      <a href="/2016/11/10/hello-world/" class="article-date">
+      <time datetime="2016-11-10T18:12:45.000Z" itemprop="datePublished">2016-11-10</time>
 </a>
 
+ 
+    <a href="/2016/11/10/hello-world/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2016/11/10/hello-world/"></span>
+        
+    </a>
 
-        </div>
-         
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/15/Web-Tools-1/">Web Tools(1) The Differences between js &amp; jQuery</a>
+      <a class="article-title" href="/2016/11/10/hello-world/">Hello World</a>
     </h1>
   
 
-        <div class="article-info info-on-archive">
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
+              Hello World.
+          
+      
     </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+      
+      
+        <p class="article-more-link">
+          <a href="/2016/11/10/hello-world/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/10/hello-world/" class="archive-article-date">
-      <time datetime="2016-11-10T18:12:45.000Z" itemprop="datePublished">11-10</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/10/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
+
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
-
-    
-
 </div>
       <footer id="footer">
     <div class="outer">
@@ -385,6 +383,26 @@
         })
     </script>
 
+
+    
+
+    
+        <script id="dsq-count-scr" src="//https-shancezhao-github-io.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
 
